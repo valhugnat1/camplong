@@ -27,5 +27,16 @@
             "image": "https://placehold.co/600x400/FF6347/FFFFFF?text=Techno-Cooking"
         }
     ],
-    "registrations": []
+    "registrations": [
+        {
+            "event_id": 1,
+            "name": "Hugo Philipp",
+            "email": "hphilipp@scaleway.com"
+        },
+        {
+            "event_id": 1,
+            "name": "annotation-app",
+            "email": "ai-tooling-team@scaleway.com"
+        }
+    ]
 }

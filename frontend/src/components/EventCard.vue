@@ -1,5 +1,9 @@
 <template>
-  <div class="event-card">
+  <!-- The entire card is now a link to the event's detail page -->
+  <router-link
+    :to="{ name: 'EventDetail', params: { id: event.id } }"
+    class="event-card"
+  >
     <div class="card-inner">
       <div class="card-image-wrapper">
         <img :src="event.image" :alt="event.title" class="card-image" />
@@ -64,19 +68,19 @@
           </div>
         </div>
 
+        <!-- This is now a div styled to look like a button, providing a visual cue -->
         <div class="card-button-wrapper">
-          <button class="booking-button">
+          <div class="booking-button">
             <span>Book Your Spot</span>
-          </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  // The script block remains the same as the previous example
   name: "EventCard",
   props: {
     event: { type: Object, required: true },
@@ -85,6 +89,7 @@ export default {
     formattedDate() {
       if (!this.event.date) return "";
       const date = new Date(this.event.date);
+      // Using 'en-GB' for a more standard DD/MM/YYYY format that is common in Europe
       const options = {
         year: "numeric",
         month: "short",
@@ -93,9 +98,9 @@ export default {
         minute: "2-digit",
         hour12: false,
       };
-      return new Intl.DateTimeFormat("fr-FR", options)
+      return new Intl.DateTimeFormat("en-GB", options)
         .format(date)
-        .replace(",", " à");
+        .replace(",", " at");
     },
     formattedPrice() {
       return new Intl.NumberFormat("fr-FR", {
@@ -108,10 +113,14 @@ export default {
 </script>
 
 <style scoped>
+/* ✅ The root element is now a link, so we remove default link styles */
 .event-card {
   position: relative;
   padding: 2px; /* Space for the gradient border */
   transition: all 0.3s ease-in-out;
+  display: block; /* Ensures the link takes up the full space */
+  text-decoration: none; /* Removes underline from link */
+  color: inherit; /* Inherits text color */
 }
 
 /* The animated gradient border on hover */
@@ -251,9 +260,11 @@ export default {
   margin-top: auto; /* Pushes button to the bottom */
 }
 
+/* ✅ This is now a div, but it keeps the button styles for a consistent look */
 .booking-button {
   width: 100%;
   padding: 12px 24px;
+  text-align: center;
   border: none;
   color: white;
   font-weight: 700;
@@ -283,12 +294,12 @@ export default {
   z-index: -1;
 }
 
-.booking-button:hover {
+.event-card:hover .booking-button {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(236, 72, 153, 0.6), 0 0 15px rgba(139, 92, 246, 0.6);
 }
 
-.booking-button:hover::before {
+.event-card:hover .booking-button::before {
   left: 100%;
 }
 </style>
