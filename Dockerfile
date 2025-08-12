@@ -1,11 +1,13 @@
 # Stage 1: build frontend
-FROM node:18-alpine AS node-build
+FROM node:22-alpine AS node-build
 WORKDIR /build
 COPY frontend/package*.json ./
 COPY frontend/vite.config.js ./
+COPY frontend/index.html ./
+COPY frontend/public ./public
 COPY frontend/src ./src
 RUN npm ci
-RUN npm run build
+RUN npm run build 
 
 # Stage 2: assemble final image with python + nginx
 FROM python:3.11-slim

@@ -34,11 +34,11 @@ export default {
   },
   async created() {
     try {
-      // NOTE: Using a placeholder service to ensure functionality.
-      // Replace with your actual backend URL: "http://127.0.0.1:8000/api/events"
-      const res = await axios.get("http://127.0.0.1:8000/api/events");
+      // ✅ Use a relative path. This works for both dev and prod.
+      const res = await axios.get("/api/events");
       this.events = res.data;
     } catch (error) {
+      console.log("Failed to fetch events:", error);
       console.error("Failed to fetch events:", error);
     }
   },
