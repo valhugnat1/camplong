@@ -1,0 +1,31 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "title": "Tech All Night Long",
+            "date": "2025-09-09T22:00:00",
+            "location": "Le Glazart",
+            "description": "An unforgettable night of tech house and deep tech with the best local DJs.",
+            "artists": [
+                "Theo Morin",
+                "Emile Rey"
+            ],
+            "price": 15.5,
+            "image": "https://placehold.co/600x400/000000/FFFFFF?text=Tech+Night"
+        },
+        {
+            "id": 2,
+            "title": "Techno-Cooking",
+            "date": "2025-09-11T16:00:00",
+            "location": "La Rotonde",
+            "description": "A unique experience combining a cooking workshop with a live techno set. Learn to cook amazing food while dancing.",
+            "artists": [
+                "DJ Cook",
+                "MC Spice"
+            ],
+            "price": 25.0,
+            "image": "https://placehold.co/600x400/FF6347/FFFFFF?text=Techno-Cooking"
+        }
+    ],
+    "registrations": []
+}
