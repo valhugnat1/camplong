@@ -6,7 +6,7 @@ It also serves a simple static HTML website at the root URL, while the main Vue.
 
 ## ✨ Tech Stack
 
-  * **Frontend:** Vue.js 3 (with Vite), Vue Router, Tailwind CSS
+  * **Frontend:** Vue.js 3 (with Vite), Vue Router
   * **Backend:** Python 3, FastAPI
   * **Web Server:** Nginx
   * **Containerization:** Docker
