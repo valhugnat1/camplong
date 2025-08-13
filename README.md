@@ -48,7 +48,7 @@ You can run this project in two ways: as a single Docker container (recommended 
 ### Prerequisites
 
   * [Docker](https://www.docker.com/get-started)
-  * [Node.js](https://nodejs.org/) (v18 or later)
+  * [Node.js](https://nodejs.org/) (v22 or later)
   * [Python](https://www.python.org/downloads/) (v3.11 or later)
 
 -----
