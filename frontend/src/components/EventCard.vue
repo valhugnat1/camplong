@@ -262,7 +262,7 @@ export default {
 
 /* ✅ This is now a div, but it keeps the button styles for a consistent look */
 .booking-button {
-  width: 100%;
+  width: 85%;
   padding: 12px 24px;
   text-align: center;
   border: none;
@@ -282,7 +282,7 @@ export default {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 85%;
   height: 100%;
   background: linear-gradient(
     90deg,
